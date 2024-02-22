@@ -14,7 +14,7 @@ public class BasePage {
         LOG.info("Start test");
         System.setProperty("webdriver.chrome.driver", "C://WebDrivers/chromedriver121.exe");
         driver = new ChromeDriver();
-        String url="https://sneakerindustry.ro/en/" ;
+        String url="https://sneakerindustry.ro/ro/" ;
         driver.get(url);
 
         LOG.info("Open browser maximized");
@@ -27,7 +27,8 @@ public class BasePage {
     }
 
     public static String returnBaseUrl() {
-        return "https://demo.automationtesting.in/Index.html";
+
+        return "https://sneakerindustry.ro/ro/";
     }
 
     public static String getBaseUrl() {
@@ -36,5 +37,13 @@ public class BasePage {
             return baseurl.replace("Index.html", "");
         }
         return baseurl;
+    }
+
+    public static void sleep(long ms){
+        try {
+            Thread.sleep(ms);
+        } catch(InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

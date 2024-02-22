@@ -4,38 +4,34 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.BasePage;
+import pages.SignInPage.SignInPage;
 import tests.BaseTest;
+
+import static pages.BasePage.sleep;
 
 public class SignInTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(SignInTest.class);
 
+    String mail = "mrtwin999@yahoo.com";
+    String password = "Alex.2002";
+
     @Test
     public void signIn() {
 
-        String email = "grupa1@automation.com";
-        String password = "parola";
+        LOG.info("press the sign in button");
+        signInPage.pressSignIn();
 
-        LOG.info("Check 'Sign in' button");
-        Assert.assertTrue(signInPage.isSignInButtonDisplayed(), "Button is not displayed");
+        LOG.info("insert email address");
+        signInPage.insertEmail(mail);
 
-        LOG.info("Click 'Sign in' button");
-        signInPage.clickSignInButton();
+        LOG.info("insert password");
+        signInPage.insertPassword(password);
 
-        LOG.info("Verify if logo is displayed");
-        Assert.assertTrue(signInPage.isLogoDisplayed(), "Logo is not displayed");
+        LOG.info("sign in");
+        signInPage.signIn();
 
-        LOG.info("Complete the fields");
-        signInPage.typeInSignInEmailField(email);
-        signInPage.typeInSignInPasswordField(password);
+        sleep(5000);
 
-        LOG.info("Click Enter and check message");
-        signInPage.clickEnterButton();
-        Assert.assertTrue(signInPage.isErrorMessageDisplayed(), "Error msg is not displayed");
-
-        LOG.info("Navigate back");
-        signInPage.clickBack();
-
-        LOG.info("Click 'Skip sign in' button");
-        signInPage.clickSkipSignInButton();
     }
 }
