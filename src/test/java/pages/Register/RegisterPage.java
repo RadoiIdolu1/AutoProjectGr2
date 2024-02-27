@@ -27,7 +27,6 @@ public class RegisterPage extends BasePage {
     private By lastName = By.xpath("//input[@name='lastname']");
     private By email = By.xpath("//input[@name='email']");
     private By pass = By.xpath("//input[@name='password']");
-    private By regButton = By.xpath("//button[@data-link-action='save-customer' and @type='submit']");
 
     public void selMale(){
         LOG.info("select gender");
