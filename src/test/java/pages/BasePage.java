@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pages.BasePage;
 
 public class BasePage {
     private static final Logger LOG = LoggerFactory.getLogger(BasePage.class);

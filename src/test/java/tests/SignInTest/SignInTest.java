@@ -30,7 +30,8 @@ public class SignInTest extends BaseTest {
         LOG.info("sign in");
         signInPage.signIn();
 
-        sleep(5000);
+        sleep(1000);
 
+        //assert pe un element daca exista sau nu
     }
 }
