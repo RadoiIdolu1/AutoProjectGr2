@@ -22,10 +22,15 @@ public class SearchBar extends BasePage {
         return instance;
     }
 
+    private By cookies = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     private By clickSearchBar = By.xpath("//div[@class='header-search right']//span[contains(text(),'Caută')]");
-    private By writeSearch = By.xpath("//div[@id='search-overlay']//input[@placeholder='Caută Produse']");
-    private By setItem = By.xpath("/html[1]/body[1]/div[2]/header[1]/div[2]/div[1]/form[1]/ul[1]/li[1]/a[1]");
+    private By writeSearch = By.xpath("/html[1]/body[1]/div[3]/header[1]/div[2]/div[1]/form[1]/input[1]");
+    private By setItem = By.xpath("//span[normalize-space()='W Air Force 1 07 Mid']");
 
+    public void acceptCookies(){
+        LOG.info("Accept cookies");
+        driver.findElement(cookies).click();
+    }
 
     public void openSearch(){
         LOG.info("Open searchbar");

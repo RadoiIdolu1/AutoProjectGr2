@@ -22,6 +22,11 @@ public class RegisterTest extends BaseTest {
     public void fillRegister() {
         driver.get(newUrl);
         sleep(1000);
+
+        LOG.info("Accept cookies");
+        registerPage.acceptCookies();
+        sleep(1000L);
+
         LOG.info("select gender");
         registerPage.selMale();
 

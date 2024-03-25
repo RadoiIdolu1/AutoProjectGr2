@@ -21,14 +21,18 @@ public class ItemsPage extends BasePage {
         return instance;
     }
 
+    private By cookies = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     private By sneakersMen =By.xpath("//a[contains(text(), 'SNEAKERS M')]");
-    private By sneaker = By.xpath("//div[@id='js-product-list']//div[2]//article[1]//a[1]//img[1]");
+    private By sneaker = By.xpath("//img[@src='https://sneakerindustry.ro/113968-category_products/6-retro.jpg']");
     private By sizeDropdown = By.id("group_28");
-    private By selectSize = By.xpath("//option[@value='202']");
+    private By selectSize = By.xpath("//option[@value='174']");
     private By addInCart = By.xpath("//button[@name='add']");
 
 
-
+    public void acceptCookies(){
+        LOG.info("Accept cookies");
+        driver.findElement(cookies).click();
+    }
 
     public void setSneakerMale(){
         LOG.info("Select Male Sneakers");
@@ -45,8 +49,8 @@ public class ItemsPage extends BasePage {
         driver.findElement(sizeDropdown).click();
     }
 
-    public void set47(){
-        LOG.info("Select the size 47");
+    public void set45(){
+        LOG.info("Select the size 45");
         driver.findElement(selectSize).click();
     }
 

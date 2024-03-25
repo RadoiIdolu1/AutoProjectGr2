@@ -22,11 +22,17 @@ public class RegisterPage extends BasePage {
         return instance;
     }
 
+    private By cookies = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     private By selMale = By.xpath("//input[@name='id_gender' and @value='1']");
     private By firstName = By.xpath("//input[@name='firstname']");
     private By lastName = By.xpath("//input[@name='lastname']");
     private By email = By.xpath("//input[@name='email']");
     private By pass = By.xpath("//input[@name='password']");
+
+    public void acceptCookies(){
+        LOG.info("Accept cookies");
+        driver.findElement(cookies).click();
+    }
 
     public void selMale(){
         LOG.info("select gender");

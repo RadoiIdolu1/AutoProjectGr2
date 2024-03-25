@@ -16,14 +16,21 @@ public class SearchBarTest extends BaseTest {
 
     public void searchBar() {
 
-        searchBar.openSearch();
+        LOG.info("Accept cookies");
+        searchBar.acceptCookies();
         sleep(1000L);
 
-        searchBar.wSearch(item);
+        LOG.info("Open the searchbar");
+        searchBar.openSearch();
         sleep(2000L);
 
+        LOG.info("Write in the searchbar a product");
+        searchBar.wSearch(item);
+        sleep(3000L);
+
+        LOG.info("Select the item");
         searchBar.selItem();
-        sleep(2000L);
+        sleep(3000L);
 
 
     }

@@ -20,6 +20,7 @@ public class FilterPage extends BasePage {
         return instance;
     }
 
+    private By cookies = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     public By selWomen = By.xpath("//a[@id='link-custom-page-SNEAKERS WOMEN-3']");
     public By selFilter = By.xpath("//a[@class='select-title']");
     public By setLtoH = By.xpath("//a[normalize-space()='Price, low to high']");
@@ -27,6 +28,10 @@ public class FilterPage extends BasePage {
     public By setAtoZ = By.xpath("//a[normalize-space()='Name, A to Z']");
 
 
+    public void acceptCookies(){
+        LOG.info("Accept cookies");
+        driver.findElement(cookies).click();
+    }
 
     public void clickWomen(){
         LOG.info("select the women sneaker category");

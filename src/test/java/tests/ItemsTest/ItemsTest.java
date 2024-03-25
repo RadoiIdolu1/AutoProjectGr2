@@ -14,6 +14,10 @@ public class ItemsTest extends BaseTest {
     @Test
     public void addItems(){
 
+        LOG.info("Accept cookies");
+        itemsPage.acceptCookies();
+        sleep(1000L);
+
         LOG.info("Select Male Sneakers");
         itemsPage.setSneakerMale();
 
@@ -23,13 +27,13 @@ public class ItemsTest extends BaseTest {
         LOG.info("Choose the size of the sneaker");
         itemsPage.setSizeSneaker();
 
-        LOG.info("Select my size(47)");
-        itemsPage.set47();
+        LOG.info("Select my size(45)");
+        itemsPage.set45();
 
         LOG.info("Add in cart");
         itemsPage.add();
 
-    //assert daca exista produsul in cos
+
 
 
     }

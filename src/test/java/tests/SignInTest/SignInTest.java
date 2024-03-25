@@ -18,6 +18,10 @@ public class SignInTest extends BaseTest {
     @Test
     public void signIn() {
 
+        LOG.info("Accept cookies");
+        signInPage.acceptCookies();
+        sleep(1000L);
+
         LOG.info("press the sign in button");
         signInPage.pressSignIn();
 
@@ -31,7 +35,5 @@ public class SignInTest extends BaseTest {
         signInPage.signIn();
 
         sleep(1000);
-
-        //assert pe un element daca exista sau nu
     }
 }

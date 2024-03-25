@@ -11,7 +11,7 @@ public class BasePage {
 
     public static void setUp() {
         LOG.info("Start test");
-        System.setProperty("webdriver.chrome.driver", "C://WebDrivers/chromedriver121.exe");
+        System.setProperty("webdriver.chrome.driver", "C://WebDrivers/chromedriver122.exe");
         driver = new ChromeDriver();
         String url="https://sneakerindustry.ro/ro/" ;
         driver.get(url);

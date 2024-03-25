@@ -20,10 +20,16 @@ public class Newsletter extends BasePage {
         return  instance;
     }
 
+    private By cookies = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     private By emailField= By.xpath("//input[@type='email']");
     private By button = By.xpath("//input[@type='submit']");
+    private By checkbox = By.xpath("//input[@name='mc4wp-subscribe']");
 
 
+    public void acceptCookies(){
+        LOG.info("Accept cookies");
+        driver.findElement(cookies).click();
+    }
 
     public void insEmail(String email){
         LOG.info("Insert email");
@@ -33,6 +39,11 @@ public class Newsletter extends BasePage {
     public void pressButton(){
         LOG.info("Press the button");
         driver.findElement(button).click();
+    }
+
+    public void pressCheck(){
+        LOG.info("Press the check button");
+        driver.findElement(checkbox).click();
     }
 
 }

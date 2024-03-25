@@ -19,10 +19,16 @@ public class SignInPage extends BasePage {
         return instance;
     }
 
+    private By cookies = By.id("CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll");
     private By signInButton = By.className("login");
     private By emailSignIn = By.xpath("//input[@name='email']");
     private By passSignIn = By.xpath("//input[@name='password']");
     private By signIn = By.xpath("//button[@data-link-action='sign-in']");
+
+    public void acceptCookies(){
+        LOG.info("Accept cookies");
+        driver.findElement(cookies).click();
+    }
 
     public void pressSignIn(){
         LOG.info("press sign in button");
